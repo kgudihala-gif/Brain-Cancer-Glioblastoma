@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="AfterScan helps people review a brain MRI model result and find their next step.">
+  <title>AfterScan — A clear next step</title>
+  <link rel="stylesheet" href="./upload.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#intro" aria-label="AfterScan home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4.5c-7.6 0-13.7 6.1-13.7 13.7 0 5.7 3.5 10.6 8.5 12.7l.2 4.3 4.8-3.2c7.6 0 13.7-6.1 13.7-13.7S27.6 4.5 20 4.5Z"/><path d="M14 18h4l2-5 3 12 2-7h3"/></svg></span>
+      <span>AfterScan</span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#intro" data-page-link="intro">Home</a>
+      <a href="#app" data-page-link="app">Scan</a>
+      <a href="#ai-log" data-page-link="ai-log">AI log</a>
+      <a href="#resources" data-page-link="resources">Support</a>
+      <a href="#settings" data-page-link="settings">Settings</a>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-shell">
+    <section class="page page-intro" data-page="intro" aria-labelledby="intro-title">
+      <div class="intro-copy-block">
+        <h1 id="intro-title" tabindex="-1">After your MRI,<br><em>start here.</em></h1>
+        <a class="primary-link" href="#app">
+          <span>Upload an MRI</span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="hero-art" aria-label="Abstract brain scan illustration" role="img">
+        <svg class="brain-art" viewBox="0 0 600 620" aria-hidden="true">
+          <defs>
+            <radialGradient id="brainGlow"><stop offset="0" stop-color="#d8a878" stop-opacity=".72"/><stop offset=".58" stop-color="#72978b" stop-opacity=".34"/><stop offset="1" stop-color="#284a45" stop-opacity="0"/></radialGradient>
+            <linearGradient id="scanLine" x1="0" x2="1"><stop stop-color="#f4d7af" stop-opacity="0"/><stop offset=".52" stop-color="#f4d7af" stop-opacity=".8"/><stop offset="1" stop-color="#f4d7af" stop-opacity="0"/></linearGradient>
+            <clipPath id="brainClip"><path d="M302 103c-41-31-102-9-111 43-40-3-65 39-46 72-35 28-26 81 10 96-14 37 12 73 47 72 18 51 77 57 103 23 29 34 85 26 99-16 41 9 75-27 58-64 35-28 28-81-8-100 15-42-17-77-55-72-13-47-61-70-97-54Z"/></clipPath>
+          </defs>
+          <circle cx="305" cy="306" r="246" fill="url(#brainGlow)"/>
+          <circle cx="305" cy="306" r="214" fill="none" stroke="#f2d7b5" stroke-opacity=".22"/>
+          <circle cx="305" cy="306" r="184" fill="none" stroke="#e7d6bd" stroke-opacity=".15" stroke-dasharray="3 8"/>
+          <g clip-path="url(#brainClip)">
+            <path d="M125 166c89 41 174 35 358-29M119 205c103 37 186 43 369-8M106 246c109 22 214 35 386-5M102 286c126 1 244 19 394-2M108 327c111-16 244 2 377 10M119 368c96-29 242-4 346 23M140 407c83-34 200-15 290 28M168 445c65-35 153-24 229 28" fill="none" stroke="#e5e9df" stroke-opacity=".38" stroke-width="1.5"/>
+            <path d="M304 85c-23 83-26 152-20 234 6 78 0 154-8 235M250 102c17 60 21 124 10 188s-7 157 8 241M357 107c-19 65-16 121 0 180s20 148-2 226M194 155c42 42 62 91 59 146s-31 119-71 151M405 157c-41 35-61 82-59 135s29 117 68 153" fill="none" stroke="#cad9cf" stroke-opacity=".35" stroke-width="1.4"/>
+            <ellipse cx="306" cy="308" rx="92" ry="124" fill="none" stroke="#f3d5ab" stroke-opacity=".45" stroke-width="1.5"/>
+            <ellipse cx="306" cy="308" rx="56" ry="88" fill="none" stroke="#f3d5ab" stroke-opacity=".38"/>
+          </g>
+          <path d="M112 307h386" stroke="url(#scanLine)" stroke-width="2"/>
+          <path d="M295 91c-51-32-109-6-117 45-35 1-62 39-43 72-35 28-26 81 10 96-14 37 12 73 47 72 18 51 77 57 103 23 29 34 85 26 99-16 41 9 75-27 58-64 35-28 28-81-8-100 15-42-17-77-55-72-13-47-61-70-97-54Z" fill="none" stroke="#f3e7d2" stroke-opacity=".74" stroke-width="2"/>
+          <circle cx="470" cy="164" r="4" fill="#dfa777"/><circle cx="145" cy="426" r="3" fill="#d8a878"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="page page-app" data-page="app" aria-labelledby="app-title" hidden>
+      <div class="page-heading">
+        <h1 id="app-title" tabindex="-1">Your scan</h1>
+      </div>
+
+      <div class="app-layout">
+        <section class="upload-panel panel" aria-labelledby="upload-title">
+          <h2 id="upload-title">Upload one MRI.</h2>
+          <button class="choose-button" id="choose-image" type="button">
+            <span class="upload-icon" aria-hidden="true">↑</span>
+            <span id="choose-button-label">Choose MRI image</span>
+          </button>
+          <input class="visually-hidden" id="mri-image" type="file" accept="image/*" aria-label="Choose one MRI image">
+          <p class="upload-status" id="upload-status" role="status" aria-live="polite"></p>
+          <p class="privacy-note">Pyxeda receives your image. OpenAI receives result details when guidance is on.</p>
+          <div class="upload-sketch" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        </section>
+
+        <section class="result-panel panel" id="result-card" aria-labelledby="result-title" aria-live="polite">
+          <div class="panel-index">PYXEDA RESULT</div>
+          <div class="result-state" id="result-placeholder">
+            <span class="result-orbit" aria-hidden="true"><span></span></span>
+            <h2 id="result-title">Your result will appear here.</h2>
+            <p id="result-status"></p>
+          </div>
+          <div class="result-content" id="result-content" hidden>
+            <p class="result-kicker">Pyxeda returned</p>
+            <p class="prediction-label" id="prediction-label">—</p>
+            <section class="guidance-block" id="guidance-block" aria-labelledby="guidance-title" hidden>
+              <div class="guidance-heading">
+                <h2 id="guidance-title">Next steps</h2>
+              </div>
+              <p class="guidance-status" id="guidance-status" role="status" aria-live="polite"></p>
+              <div id="guidance-output" hidden>
+                <p class="guidance-message" id="guidance-message"></p>
+                <h3>What you can do</h3>
+                <ol class="guidance-steps" id="guidance-steps"></ol>
+                <h3>Support</h3>
+                <ul class="guidance-resources" id="guidance-resources"></ul>
+              </div>
+              <button class="secondary-button guidance-retry" id="guidance-retry" type="button" hidden>Try again</button>
+            </section>
+            <p class="medical-note">Ask your radiologist to explain this result.</p>
+            <details class="raw-response" id="raw-response-details" hidden>
+              <summary>Technical details</summary>
+              <dl class="technical-facts">
+                <div><dt>Raw classifier score</dt><dd id="prediction-score">—</dd></div>
+                <div><dt>Model identifier</dt><dd id="prediction-model">—</dd></div>
+                <div><dt>HTTP status</dt><dd id="http-status">—</dd></div>
+              </dl>
+              <p class="technical-label">Full service response (JSON)</p>
+              <pre id="raw-response"></pre>
+            </details>
+            <a class="text-link" href="#resources">Find support <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="page page-ai-log" data-page="ai-log" aria-labelledby="ai-log-title" hidden>
+      <div class="page-heading">
+        <h1 id="ai-log-title" tabindex="-1">AI log</h1>
+      </div>
+      <div class="ai-log-toolbar">
+        <p class="ai-log-storage">Logs are saved in this browser.</p>
+        <button class="secondary-button" id="clear-ai-log" type="button">Clear log</button>
+      </div>
+      <p class="ai-log-status" id="ai-log-status" role="status" aria-live="polite"></p>
+      <p class="ai-log-empty" id="ai-log-empty">No AI requests yet.</p>
+      <ol class="ai-log-list" id="ai-log-list" aria-label="OpenAI request log"></ol>
+    </section>
+
+    <section class="page page-resources" data-page="resources" aria-labelledby="resources-title" hidden>
+      <div class="page-heading resource-heading">
+        <h1 id="resources-title" tabindex="-1">Support &amp; care</h1>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card resource-national" href="https://www.cancer.gov/rare-brain-spine-tumor/living/questions/diagnosis" target="_blank" rel="noreferrer">
+          <span class="resource-number">NATIONAL CANCER INSTITUTE</span>
+          <span class="resource-title">Questions for your care team</span>
+          <span class="resource-description">Questions to ask about your diagnosis.</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card resource-local" href="https://cancersupport.net/services/" target="_blank" rel="noreferrer">
+          <span class="resource-number">SF BAY AREA · WALNUT CREEK</span>
+          <span class="resource-title">Cancer Support Community</span>
+          <span class="resource-description">Groups and counseling for patients and caregivers.</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card resource-treatment" href="https://www.johnmuirhealth.com/locations/walnut-creek-behring-pavilion" target="_blank" rel="noreferrer">
+          <span class="resource-number">CANCER CARE · WALNUT CREEK</span>
+          <span class="resource-title">UCSF–John Muir Health Cancer Center</span>
+          <span class="resource-description">Cancer care in Walnut Creek.</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card resource-network" href="https://www.ucsfhealth.org/c/brain-tumor-center" target="_blank" rel="noreferrer">
+          <span class="resource-number">BRAIN TUMOR CARE</span>
+          <span class="resource-title">UCSF Brain Tumor Center</span>
+          <span class="resource-description">Specialized brain tumor care.</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="resource-card resource-network" href="https://www.braintumornetwork.org/" target="_blank" rel="noreferrer">
+          <span class="resource-number">BRAIN TUMOR NETWORK</span>
+          <span class="resource-title">Care navigation</span>
+          <span class="resource-description">Support for patients and caregivers.</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="page page-settings" data-page="settings" aria-labelledby="settings-title" hidden>
+      <div class="page-heading">
+        <h1 id="settings-title" tabindex="-1">Settings</h1>
+      </div>
+      <div class="settings-layout">
+        <section class="settings-card panel" aria-labelledby="display-title">
+          <h2 id="display-title">Accessibility</h2>
+          <label class="setting-row" for="setting-large-text"><span><strong>Larger text</strong></span><input id="setting-large-text" type="checkbox" role="switch"></label>
+          <label class="setting-row" for="setting-high-contrast"><span><strong>High contrast</strong></span><input id="setting-high-contrast" type="checkbox" role="switch"></label>
+          <label class="setting-row" for="setting-reduced-motion"><span><strong>Reduce motion</strong></span><input id="setting-reduced-motion" type="checkbox" role="switch"></label>
+        </section>
+        <div class="settings-side">
+          <section class="settings-card settings-privacy panel" aria-labelledby="privacy-title">
+            <h2 id="privacy-title">Privacy</h2>
+            <p>Pyxeda receives your image. When enabled, OpenAI receives result details. OpenAI request and response logs stay in this browser until cleared.</p>
+            <button class="secondary-button" id="clear-session" type="button">Clear scan and result</button>
+            <p class="clear-status" id="clear-status" role="status" aria-live="polite"></p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>CA‑10</span>
+  </footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>

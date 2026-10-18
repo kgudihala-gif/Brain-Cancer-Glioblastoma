@@ -1,0 +1,12 @@
+{
+  "name": "afterscan",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env.local server.js",
+    "start": "node server.js"
+  }
+}
